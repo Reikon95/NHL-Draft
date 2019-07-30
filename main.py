@@ -1,5 +1,5 @@
-#import csv
-#import numpy
+import csv
+import numpy
 DO9 = {}
 D10 = {}
 D11 = {}
@@ -16,9 +16,7 @@ D18 = {}
 with open('2009.csv') as Draft09:
   draft = Draft09.readlines()
   for pick in draft:
-    # print(pick)
     a = pick.split(',')
-    # print(a[1])
   round_one = []
   round_two = []
   round_three = []
@@ -51,6 +49,8 @@ with open('2009.csv') as Draft09:
     for pick in draft:
       a = pick.split(',')
       picks.append(a[1])  
+    return picks
+  print(team_picks())
   def num_games():
     i = 0
     for pick in draft:
@@ -60,8 +60,18 @@ with open('2009.csv') as Draft09:
       except:
         continue 
     return i
-  print(num_games())
+  
+  def num_picks():
+    i = 0
+    for pick in draft:
+      i += 1
+    return i 
+  num_picks()
 
+  def mean_games():
+    av = int(((num_games()) / (num_picks())))
+    return 'The mean number of games played in this draft was ' + str(av)
+  print(mean_games())
 with open('2010.csv') as Draft10:
   draft = Draft10.readlines()
   print(num_games())
