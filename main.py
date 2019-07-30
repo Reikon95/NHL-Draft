@@ -19,6 +19,32 @@ with open('2009.csv') as Draft09:
     # print(pick)
     a = pick.split(',')
     # print(a[1])
+  round_one = []
+  round_two = []
+  round_three = []
+  round_four = []
+  round_five = []
+  round_six = []
+  round_seven = []  
+  def round_sorter():
+    i = 1
+    for pick in draft:
+      if i < 32:
+        round_one.append(pick)
+      elif i < 62:
+        round_two.append(pick)
+      elif i < 92:
+        round_three.append(pick)
+      elif i < 122: 
+        round_four.append(pick)
+      elif i < 152:
+        round_five.append(pick)
+      elif i < 182:
+        round_six.append(pick)
+      else:
+        round_seven.append(pick)
+      i += 1
+  round_sorter()
   
   def team_picks():
     picks = []
