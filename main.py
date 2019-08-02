@@ -57,7 +57,6 @@ with open('2009.csv') as Draft09:
   def mean_games(dataset):
     av = int(((num_games()) / (num_picks())))
     return 'The mean number of games played in this draft was ' + str(av)
-  print(mean_games(draft))
 
   def pct_games_played(dataset):
     median_set = []
@@ -72,49 +71,56 @@ with open('2009.csv') as Draft09:
     pc = int(100 * (len(median_set) / num_picks()))
     return str(pc) + '% of players drafted in this year went on to play a game in the NHL' 
   print(pct_games_played(draft))  
+  
+  def position_sorter(dataset, position):
+    pos = []
+    for pick in draft:
+      a = pick.split(',')
+      if (a[4] == position):
+        pos.append(a[4])  
+    result = 'There were ' + str(len(pos)) + ' players picked who were listed as ' + position + '.'
+    return result
+  print(position_sorter(draft, 'D'))
     
 with open('2010.csv') as Draft10:
   draft = Draft10.readlines()
-  print(num_games())
   print(mean_games(draft))
+  print(pct_games_played(draft))  
 
 with open('2011.csv') as Draft11:
   draft = Draft11.readlines()
-  print(num_games())
   print(mean_games(draft))
+  print(pct_games_played(draft))  
 
 with open('2012.csv') as Draft12:
   draft = Draft12.readlines()
-  print(num_games())
   print(mean_games(draft))
+  print(pct_games_played(draft))  
 
 with open('2013.csv') as Draft13:
   draft = Draft13.readlines()
-  print(num_games())
+
   print(mean_games(draft))
+  print(pct_games_played(draft))  
 
 with open('2014.csv') as Draft14:
   draft = Draft14.readlines()
-  print(num_games())
   print(mean_games(draft))
+  print(pct_games_played(draft))  
 
 with open('2015.csv') as Draft15:
   draft = Draft15.readlines()
-  print(num_games())
   print(mean_games(draft))
+  print(pct_games_played(draft))  
 
 with open('2016.csv') as Draft16:
   draft = Draft16.readlines()
-  print(num_games())
   print(mean_games(draft))
+  print(pct_games_played(draft))  
 
 with open('2017.csv') as Draft17:
   draft = Draft17.readlines()
-  print(num_games())
   print(mean_games(draft))
+  print(pct_games_played(draft))  
 
-with open('2018.csv') as Draft18:
-  draft = Draft18.readlines()
-  print(num_games())
-  print(mean_games(draft))
 
